@@ -1,0 +1,1 @@
+number = driver.find_element(By.XPATH, "//input[@type='number']")
