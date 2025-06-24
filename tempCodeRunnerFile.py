@@ -1,1 +1,1 @@
-number = driver.find_element(By.XPATH, "//input[@type='number']")
+firstname.send_keys("Sourav")
