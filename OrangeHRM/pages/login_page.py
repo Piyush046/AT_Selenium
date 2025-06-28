@@ -4,10 +4,10 @@ from locators.locators import LoginPageLocators
 
 class LoginPage(BasePage):
     def enter_username(self, username):
-        self.find(By.NAME, LoginPageLocators.USERNAME_INPUT).send_keys(username)
+        self.hind(By.NAME, LoginPageLocators.USERNAME_INPUT).send_keys(username)
 
     def enter_password(self, password):
-        self.find(By.NAME, LoginPageLocators.PASSWORD_INPUT).send_keys(password)
+        self.hind(By.NAME, LoginPageLocators.PASSWORD_INPUT).send_keys(password)
 
     def click_login(self):
-        self.find(By.CLASS_NAME, LoginPageLocators.LOGIN_BUTTON).click()
+        self.hind(By.CLASS_NAME, LoginPageLocators.LOGIN_BUTTON).click()

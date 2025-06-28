@@ -4,4 +4,4 @@ from locators.locators import DashboardPageLocators
 
 class DashboardPage(BasePage):
     def get_header_text(self):
-        return self.find(By.CLASS_NAME, DashboardPageLocators.DASHBOARD_HEADER).text
+        return self.hind(By.CLASS_NAME, DashboardPageLocators.DASHBOARD_HEADER).text

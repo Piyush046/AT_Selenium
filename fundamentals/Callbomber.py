@@ -25,4 +25,4 @@ button.click()  # Click the button to start the call bombing
 
 
 # Project has been shoutdown due to Capcha issues,
-# Project may require additional steps or configurations to work properly.
+# 
