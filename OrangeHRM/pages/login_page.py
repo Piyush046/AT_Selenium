@@ -1,13 +1,22 @@
 from selenium.webdriver.common.by import By
-from .base_page import BasePage
-from locators.locators import LoginPageLocators
 
-class LoginPage(BasePage):
-    def enter_username(self, username):
-        self.hind(By.NAME, LoginPageLocators.USERNAME_INPUT).send_keys(username)
+class LoginPage:
+    # Locators (all in the same page)
+    USERNAME_INPUT = "username"
+    PASSWORD_INPUT = (By.NAME, "password")
+    LOGIN_BUTTON = (By.XPATH, "//button[@type='submit']")
+    DASHBOARD_HEADER = (By.XPATH, "//h6[text()='Dashboard']")
 
-    def enter_password(self, password):
-        self.hind(By.NAME, LoginPageLocators.PASSWORD_INPUT).send_keys(password)
+    def __init__(self, driver):
+        self.driver = driver
 
-    def click_login(self):
-        self.hind(By.CLASS_NAME, LoginPageLocators.LOGIN_BUTTON).click()
+    def load(self):
+        self.driver.get("https://opensource-demo.orangehrmlive.com/")
+
+    def login(self, username, password):
+        self.driver.find_element(By.NAME,self.USERNAME_INPUT).send_keys(username)
+        self.driver.find_element(*self.PASSWORD_INPUT).send_keys(password)
+        self.driver.find_element(*self.LOGIN_BUTTON).click()
+
+    def is_dashboard_displayed(self):
+        return self.driver.find_element(*self.DASHBOARD_HEADER).is_displayed()
